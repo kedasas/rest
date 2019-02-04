@@ -26,3 +26,11 @@ services:
 
     # add more service definitions when explicit configuration is needed
     # please note that last definitions always *replace* previous ones
+
+    App\Services\RestDataParser:
+        arguments:
+            $twig: "@twig"
+
+    App\Services\RestDataProvider:
+        arguments:
+            $providerUri: 'http://api.openweathermap.org/data/2.5/weather'

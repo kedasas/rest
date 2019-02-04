@@ -1,0 +1,20 @@
+{# Html template for Html tab head #}
+{% macro nav_tab(city,id) %}
+    <a class="nav-item nav-link active" id="nav-{{ city }}{{ id }}-tab" data-toggle="tab" href="#nav-{{ city }}{{ id }}"
+       role="tab" aria-controls="nav-{{ city }}{{ id }}" aria-selected="true">{{ city }}</a>
+{% endmacro %}
+
+{# Html template for Html tab content #}
+{% macro tab_cont(city,id,data) %}
+    <div class="tab-pane fade show active" id="nav-{{ city }}{{ id }}" role="tabpanel"
+         aria-labelledby="nav-{{ city }}{{ id }}-tab"
+    >
+        <h3>Weather in {{ city }}, {{ data['sys']['country'] }} </h3>
+        <p>Temperature: {{ data['main']['temp'] }} F</p>
+        <p>Cloudiness: {{ data['weather'][0]['description'] }}</p>
+        <p>Wind: {{ data['wind']['speed'] }} m/s</p>
+        <p>Pressure: {{  data['main']['pressure'] }} hpa</p>
+        <p>Humidity: {{ data['main']['humidity'] }} %</p>
+        <p>Geo coords: [{{ data['coord']['lat'] }},{{ data['coord']['lon'] }}]</p>
+    </div>
+{% endmacro %}
