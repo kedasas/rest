@@ -14,4 +14,4 @@ https://github.com/guzzle/guzzle
 Authors
 -------
 
-Kestas
+Kestas K.
